@@ -2,8 +2,14 @@ public class SerialCircuit extends Circuit {
 
     private final Circuit[] c;
 
-    public SerialCircuit(Circuit... c) {
-        this.c = c;
+    public SerialCircuit(Object... circuits) {
+        c = new Circuit[circuits.length];
+        for (int i = 0; i < circuits.length; i++) {
+            c[i] = circuits[i] instanceof Number ? new Resistor(((Number) circuits[i]).doubleValue()) : (Circuit) circuits[i];
+        }
+        if (c.length < 2) {
+            throw new IllegalArgumentException("Not enough params");
+        }
     }
 
     /**
@@ -24,9 +30,11 @@ public class SerialCircuit extends Circuit {
     @Override
     String toSimpleString() {
         StringBuilder r = new StringBuilder("(");
-        for (Circuit circuit : c) {
-            r.append((circuit instanceof Resistor) ? circuit.toString() : circuit.toSimpleString());
-            r.append(" + ");
+        for (int i = 0; i < c.length; i++) {
+            r.append((c[i] instanceof Resistor) ? c[i].toString() : c[i].toSimpleString());
+            if (i != c.length - 1) {
+                r.append(" + ");
+            }
         }
         return r + ")";
     }

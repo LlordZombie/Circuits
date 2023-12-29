@@ -1,21 +1,24 @@
-public class Resistor extends Circuit{
+public class Resistor extends Circuit {
     private double value;
-    public Resistor(){
-        value=0;
+
+    public Resistor() {
+        value = 0;
     }
-    public Resistor(double value){
+
+    public Resistor(double value) {
         this.value = value;
     }
-    protected void set(double resistance){
+
+    protected void set(double resistance) {
         value = resistance;
     }
 
     /**
-     * @return 
+     * @return
      */
     @Override
     public double getResistance() {
-       return value;
+        return value;
     }
 
     /**
@@ -35,7 +38,7 @@ public class Resistor extends Circuit{
     }
 
     /**
-     * @return 
+     * @return
      */
     @Override
     int getCount() {

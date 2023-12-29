@@ -4,7 +4,8 @@ public class Potentiometer extends Resistor {
     public Potentiometer() {
         super();
     }
-    public Potentiometer(double value){
+
+    public Potentiometer(double value) {
         super(value);
     }
 
