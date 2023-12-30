@@ -1,7 +1,21 @@
+/**
+ * Represents a parallel electrical circuit composed of multiple sub-circuits.
+ * Extends the abstract class Circuit.
+ */
 public class ParallelCircuit extends Circuit {
 
+    /**
+     * Array of sub-circuits in the parallel circuit.
+     */
     private final Circuit[] c;
 
+    /**
+     * Constructs a ParallelCircuit with the given sub-circuits.
+     * Converts Number objects to Resistors if necessary.
+     *
+     * @param circuits Array of Circuit objects or Numbers representing resistances.
+     * @throws IllegalArgumentException if the number of sub-circuits is less than 2.
+     */
     public ParallelCircuit(Object... circuits) {
         c = new Circuit[circuits.length];
         for (int i = 0; i < circuits.length; i++) {
@@ -13,7 +27,9 @@ public class ParallelCircuit extends Circuit {
     }
 
     /**
-     * @return
+     * Calculates and returns the equivalent resistance of the parallel circuit.
+     *
+     * @return Equivalent resistance of the parallel circuit.
      */
     @Override
     double getResistance() {
@@ -25,7 +41,10 @@ public class ParallelCircuit extends Circuit {
     }
 
     /**
-     * @return
+     * Generates a simple string representation of the parallel circuit,
+     * including its sub-circuits.
+     *
+     * @return Simple string representation of the parallel circuit.
      */
     @Override
     String toSimpleString() {
@@ -36,21 +55,23 @@ public class ParallelCircuit extends Circuit {
                 r.append(" | ");
             }
         }
-
         return r + "]";
-
     }
 
     /**
-     * @return
+     * Generates a string indicating the number of resistances in the parallel circuit.
+     *
+     * @return String indicating the number of resistances.
      */
     @Override
     String toCountString() {
-        return String.format(" (Anzahl der Widerstände: %d)", getCount());
+        return String.format(" (Number of Resistances: %d)", getCount());
     }
 
     /**
-     * @return
+     * Calculates and returns the total number of resistances in the parallel circuit.
+     *
+     * @return Total number of resistances in the parallel circuit.
      */
     @Override
     int getCount() {
