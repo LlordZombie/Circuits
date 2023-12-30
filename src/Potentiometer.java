@@ -3,8 +3,7 @@
  * that extends the functionality of the {@code Resistor} class.
  * It allows setting a variable resistance value.
  *
- * @author Your Name
- * @version 1.0
+ * @author Linus Freistetter
  * @see Resistor
  */
 public class Potentiometer extends Resistor {
