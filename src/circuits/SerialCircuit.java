@@ -1,3 +1,5 @@
+package circuits;
+
 /**
  * Represents a serial circuit composed of multiple circuits connected in series.
  * The total resistance of the serial circuit is the sum of the resistances of its components.
@@ -31,10 +33,10 @@ public class SerialCircuit extends Circuit {
      * @return The total resistance of the serial circuit.
      */
     @Override
-    double getResistance() {
+    public double getResistance() {
         double r = 0;
-        for (Circuit circuit : c) {
-            r += circuit.getResistance();
+        for (Circuit circuit : c) {//for(int i = 0; i<c.length; i++){
+            r += circuit.getResistance();//r+= c[i].getResistance()
         }
         return r;
     }
@@ -64,7 +66,7 @@ public class SerialCircuit extends Circuit {
      */
     @Override
     String toCountString() {
-        return String.format(" (Anzahl der Widerstände: %d)", getCount());
+        return String.format(" (Number of Resistors: %d)", getCount());
     }
 
     /**
@@ -73,10 +75,10 @@ public class SerialCircuit extends Circuit {
      * @return The total number of resistances in the serial circuit.
      */
     @Override
-    int getCount() {
+    public int getCount() {
         int r = 0;
-        for (Circuit circuit : c) {
-            r += circuit.getCount();
+        for (Circuit circuit : c) {//for(int i = 0; i<c.length; i++){
+            r += circuit.getCount();//r+= c[i].getCount()
         }
         return r;
     }

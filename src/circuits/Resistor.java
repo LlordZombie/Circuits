@@ -1,6 +1,8 @@
+package circuits;
+
 /**
- * The Resistor class represents a resistor component in an electrical circuit.
- * It extends the Circuit class and provides functionality specific to resistors.
+ * The circuits.Resistor class represents a resistor component in an electrical circuit.
+ * It extends the circuits.Circuit class and provides functionality specific to resistors.
  */
 public class Resistor extends Circuit {
     /**
@@ -29,16 +31,16 @@ public class Resistor extends Circuit {
     }
 
     /**
-     * Sets the resistance value of the resistor.
-     *
-     * @param resistance The new resistance value. Must be non-negative.
-     * @throws IllegalArgumentException If the specified resistance is negative.
+     * Sets the value value of the resistor.
+     *aaaa
+     * @param value The new value value. Must be non-negative.
+     * @throws IllegalArgumentException If the specified value is negative.
      */
-    protected void set(double resistance) {
-        if (resistance < 0) {
+    protected void set(double value) {
+        if (value < 0) {
             throw new IllegalArgumentException("Resistance is negative");
         }
-        value = resistance;
+        this.value = value;
     }
 
     /**

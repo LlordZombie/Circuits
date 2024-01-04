@@ -1,3 +1,5 @@
+package circuits;
+
 /**
  * The abstract class representing an electrical circuit.
  */

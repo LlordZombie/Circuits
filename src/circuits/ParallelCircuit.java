@@ -1,6 +1,8 @@
+package circuits;
+
 /**
  * Represents a parallel electrical circuit composed of multiple sub-circuits.
- * Extends the abstract class Circuit.
+ * Extends the abstract class circuits.Circuit.
  */
 public class ParallelCircuit extends Circuit {
 
@@ -10,10 +12,10 @@ public class ParallelCircuit extends Circuit {
     private final Circuit[] c;
 
     /**
-     * Constructs a ParallelCircuit with the given sub-circuits.
+     * Constructs a circuits.ParallelCircuit with the given sub-circuits.
      * Converts Number objects to Resistors if necessary.
      *
-     * @param circuits Array of Circuit objects or Numbers representing resistances.
+     * @param circuits Array of circuits.Circuit objects or Numbers representing resistances.
      * @throws IllegalArgumentException if the number of sub-circuits is less than 2.
      */
     public ParallelCircuit(Object... circuits) {
@@ -21,7 +23,7 @@ public class ParallelCircuit extends Circuit {
         for (int i = 0; i < circuits.length; i++) {
             c[i] = circuits[i] instanceof Number ? new Resistor(((Number) circuits[i]).doubleValue()) : (Circuit) circuits[i];
         }
-        if (c.length < 2) {
+        if (getCount() < 2) {
             throw new IllegalArgumentException("Not enough params");
         }
     }
@@ -32,10 +34,10 @@ public class ParallelCircuit extends Circuit {
      * @return Equivalent resistance of the parallel circuit.
      */
     @Override
-    double getResistance() {
+    public double getResistance() {
         double r = 0;
         for (Circuit circuit : c) {
-            r += 1 / circuit.getResistance();
+            r += 1 / circuit.getResistance();//1/r1 + 1/r2 = 1/rges
         }
         return 1 / r;
     }
@@ -65,7 +67,7 @@ public class ParallelCircuit extends Circuit {
      */
     @Override
     String toCountString() {
-        return String.format(" (Number of Resistances: %d)", getCount());
+        return String.format(" (Number of Resistors: %d)", getCount());
     }
 
     /**
@@ -74,7 +76,7 @@ public class ParallelCircuit extends Circuit {
      * @return Total number of resistances in the parallel circuit.
      */
     @Override
-    int getCount() {
+    public int getCount() {
         int r = 0;
         for (Circuit circuit : c) {
             r += circuit.getCount();

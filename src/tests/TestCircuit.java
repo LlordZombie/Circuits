@@ -1,7 +1,14 @@
+package tests;
+
+import circuits.ParallelCircuit;
+import circuits.Potentiometer;
+import circuits.Resistor;
+import circuits.SerialCircuit;
+
 /**
- * The TestCircuit class is a test program that demonstrates the functionality
- * of various circuit-related classes, including Resistor, Potentiometer,
- * SerialCircuit, ParallelCircuit, and more.
+ * The tests.TestCircuit class is a test program that demonstrates the functionality
+ * of various circuit-related classes, including circuits.Resistor, circuits.Potentiometer,
+ * circuits.SerialCircuit, circuits.ParallelCircuit, and more.
  */
 public class TestCircuit {
     /**
@@ -11,10 +18,13 @@ public class TestCircuit {
      * @param args Command-line arguments (not used in this program).
      */
     public static void main(String[] args) {
-        SerialCircuit s = new SerialCircuit(new SerialCircuit(1,1));
+
         Resistor r = new Resistor(100);
-        System.out.println("r = " + r +"\n");
-        System.out.println("complicated1(new Resistor(200)) = " + complicated1(new Resistor(400)) + "\n");
+        Potentiometer p = new Potentiometer();
+        p.set(123);
+        p.set(456);
+        System.out.println( r + "\n");
+        System.out.println("complicated1(new circuits.Resistor(200)) = " + complicated1(new Resistor(400)) + "\n");
         System.out.println("potentio1() = \n" + potentio1() + "\n");
         System.out.println("ellipse1() = " + ellipse1() + "\n");
         System.out.println("ellipse2() = " + ellipse2() + "\n");
@@ -27,47 +37,51 @@ public class TestCircuit {
     }
 
     /**
-     * Creates a complicated parallel circuit with a given Resistor and returns
-     * the resulting ParallelCircuit.
+     * Creates a complicated parallel circuit with a given circuits.Resistor and returns
+     * the resulting circuits.ParallelCircuit.
      *
-     * @param r2 The Resistor object used in the circuit.
-     * @return The resulting ParallelCircuit.
+     * @param r4 The circuits.Resistor object used in the circuit.
+     * @return The resulting circuits.ParallelCircuit.
      */
-    public static ParallelCircuit complicated1(Resistor r2) {
-        return (new ParallelCircuit(new SerialCircuit(new ParallelCircuit(100, 300), 200), new SerialCircuit(r2, 500), 600));
+    public static ParallelCircuit complicated1(Resistor r4) {
+        SerialCircuit s2 = new SerialCircuit(r4, 500);
+        ParallelCircuit p1 = new ParallelCircuit(100, 300);
+        SerialCircuit s1 = new SerialCircuit(p1, 200);
+        ParallelCircuit c1 = new ParallelCircuit(s1/*3*/, s2/*2*/, 600/*1*/);
+        return c1;
     }
 
     /**
-     * Creates and returns a specific ParallelCircuit configuration.
+     * Creates and returns a specific circuits.ParallelCircuit configuration.
      *
-     * @return The configured ParallelCircuit object.
+     * @return The configured circuits.ParallelCircuit object.
      */
     public static ParallelCircuit complicated2() {
         return new ParallelCircuit(new SerialCircuit(100, 200), new SerialCircuit(300, 400), new ParallelCircuit(510, 520), new SerialCircuit(650, 650));
     }
 
     /**
-     * Creates a SerialCircuit with an ellipse configuration.
+     * Creates a circuits.SerialCircuit with an ellipse configuration.
      *
-     * @return The created SerialCircuit.
+     * @return The created circuits.SerialCircuit.
      */
     public static SerialCircuit complicated3() {
         return new SerialCircuit(ellipse2(), complicated2());
     }
 
     /**
-     * Creates a SerialCircuit with a complicated configuration.
+     * Creates a circuits.SerialCircuit with a complicated configuration.
      *
-     * @return The created SerialCircuit.
+     * @return The created circuits.SerialCircuit.
      */
     public static SerialCircuit complicated4() {
         return new SerialCircuit(complicated3(), ellipse2());
     }
 
     /**
-     * Creates a SerialCircuit with a more complicated configuration.
+     * Creates a circuits.SerialCircuit with a more complicated configuration.
      *
-     * @return The created SerialCircuit.
+     * @return The created circuits.SerialCircuit.
      */
     public static SerialCircuit complicated5() {
         return new SerialCircuit(new ParallelCircuit(ellipse2(), ellipse2(), ellipse2()), complicated2(), new ParallelCircuit(ellipse2(), ellipse2(), ellipse2()));
@@ -75,7 +89,7 @@ public class TestCircuit {
 
     /**
      * Generates and returns a formatted string presenting the resistance values
-     * of a Potentiometer in a ParallelCircuit for different Potentiometer settings.
+     * of a circuits.Potentiometer in a circuits.ParallelCircuit for different circuits.Potentiometer settings.
      *
      * @return The formatted string representing resistance values.
      */
@@ -95,20 +109,20 @@ public class TestCircuit {
     }
 
     /**
-     * Creates and returns a ParallelCircuit with a specific resistor and
+     * Creates and returns a circuits.ParallelCircuit with a specific resistor and
      * serial circuit configuration.
      *
-     * @return The created ParallelCircuit.
+     * @return The created circuits.ParallelCircuit.
      */
     public static ParallelCircuit ellipse1() {
         return new ParallelCircuit(new Resistor(100), new Resistor(200), new SerialCircuit(new Resistor(310), new Resistor(320)));
     }
 
     /**
-     * Creates and returns another ParallelCircuit with a specific resistor and
+     * Creates and returns another circuits.ParallelCircuit with a specific resistor and
      * serial circuit configuration.
      *
-     * @return The created ParallelCircuit.
+     * @return The created circuits.ParallelCircuit.
      */
     public static ParallelCircuit ellipse2() {
         return new ParallelCircuit(100, 200, new SerialCircuit(310, 320));
