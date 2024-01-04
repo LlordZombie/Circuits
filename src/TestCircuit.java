@@ -11,7 +11,9 @@ public class TestCircuit {
      * @param args Command-line arguments (not used in this program).
      */
     public static void main(String[] args) {
-
+        SerialCircuit s = new SerialCircuit(new SerialCircuit(1,1));
+        Resistor r = new Resistor(100);
+        System.out.println("r = " + r +"\n");
         System.out.println("complicated1(new Resistor(200)) = " + complicated1(new Resistor(400)) + "\n");
         System.out.println("potentio1() = \n" + potentio1() + "\n");
         System.out.println("ellipse1() = " + ellipse1() + "\n");
@@ -21,6 +23,7 @@ public class TestCircuit {
         System.out.println("complicated4() = " + complicated4() + "\n");
         System.out.println("complicated5() = " + complicated5() + "\n");
         testExceptions();
+
     }
 
     /**

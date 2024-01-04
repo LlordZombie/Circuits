@@ -15,12 +15,12 @@ public class SerialCircuit extends Circuit {
      * @param circuits The circuits to be connected in series.
      * @throws IllegalArgumentException If less than 2 circuits are provided.
      */
-    public SerialCircuit(Object... circuits) {
+    public SerialCircuit(Object ... circuits) {
         c = new Circuit[circuits.length];
         for (int i = 0; i < circuits.length; i++) {
             c[i] = circuits[i] instanceof Number ? new Resistor(((Number) circuits[i]).doubleValue()) : (Circuit) circuits[i];
         }
-        if (c.length < 2) {
+        if (getCount() < 2) {
             throw new IllegalArgumentException("Not enough params");
         }
     }
