@@ -41,7 +41,7 @@ public abstract class Circuit {
     public String toString() {
         String s = toSimpleString();
         s += s.isBlank() ? "" : " = ";
-        s += getResistance() + " Ω" + toCountString();
-        return s;
+        return s + getResistance() + " Ω" + toCountString();
+
     }
 }

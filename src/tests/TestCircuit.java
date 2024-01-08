@@ -20,11 +20,12 @@ public class TestCircuit {
     public static void main(String[] args) {
 
         Resistor r = new Resistor(100);
+        System.out.println(new ParallelCircuit(r,200));
         Potentiometer p = new Potentiometer();
         p.set(123);
         p.set(456);
         System.out.println( r + "\n");
-        System.out.println("complicated1(new circuits.Resistor(200)) = " + complicated1(new Resistor(400)) + "\n");
+        System.out.println("complicated1(new circuits.Resistor(200)) = " + complicated1(new Resistor(400)).getCount() + "\n");
         System.out.println("potentio1() = \n" + potentio1() + "\n");
         System.out.println("ellipse1() = " + ellipse1() + "\n");
         System.out.println("ellipse2() = " + ellipse2() + "\n");
@@ -47,7 +48,7 @@ public class TestCircuit {
         SerialCircuit s2 = new SerialCircuit(r4, 500);
         ParallelCircuit p1 = new ParallelCircuit(100, 300);
         SerialCircuit s1 = new SerialCircuit(p1, 200);
-        ParallelCircuit c1 = new ParallelCircuit(s1/*3*/, s2/*2*/, 600/*1*/);
+        ParallelCircuit c1 = new ParallelCircuit(s1/*3*/, s2, 600);
         return c1;
     }
 

@@ -11,11 +11,6 @@ package circuits;
 public class Potentiometer extends Resistor {
 
     /**
-     * The resistance value of the potentiometer.
-     */
-    private double value;
-
-    /**
      * Constructs a new {@code circuits.Potentiometer} instance with a default resistance value of 0 ohms.
      * Calls the constructor of the superclass {@code circuits.Resistor}.
      */

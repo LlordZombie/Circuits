@@ -4,14 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7fa34a08-8992-46e9-9eab-6ea63f053fe4" name="Changes" comment="wooo fertig">
+    <list default="true" id="7fa34a08-8992-46e9-9eab-6ea63f053fe4" name="Changes" comment="wooo fertig aber wirklich">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Circuit.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Circuits/Circuit.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ParallelCircuit.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Circuits/ParallelCircuit.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Potentiometer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Circuits/Potentiometer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Resistor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Circuits/Resistor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/SerialCircuit.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Circuits/SerialCircuit.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/TestCircuit.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/tests/TestCircuit.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/circuits/Circuit.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/circuits/Circuit.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/circuits/Potentiometer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/circuits/Potentiometer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/circuits/SerialCircuit.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/circuits/SerialCircuit.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/tests/TestCircuit.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/tests/TestCircuit.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -27,6 +25,20 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
+  "lastFilter": {
+    "state": "OPEN",
+    "assignee": "LlordZombie"
+  }
+}]]></component>
+  <component name="GithubPullRequestsUISettings">
+    <option name="selectedUrlAndAccountId">
+      <UrlAndAccount>
+        <option name="accountId" value="fb5f9032-8954-45cf-ac25-29307c6fd9c1" />
+        <option name="url" value="https://github.com/LlordZombie/Circuits.git" />
+      </UrlAndAccount>
+    </option>
   </component>
   <component name="ProblemsViewState">
     <option name="selectedTabId" value="CurrentFile" />
@@ -89,7 +101,8 @@
       <workItem from="1703939548295" duration="9326000" />
       <workItem from="1703967618622" duration="8000" />
       <workItem from="1704377900779" duration="3816000" />
-      <workItem from="1704407704479" duration="4633000" />
+      <workItem from="1704407704479" duration="4824000" />
+      <workItem from="1704733907722" duration="11684000" />
     </task>
     <task id="LOCAL-00001" summary="alles ziemlich scheiße">
       <option name="closed" value="true" />
@@ -115,7 +128,15 @@
       <option name="project" value="LOCAL" />
       <updated>1703956174053</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="wooo fertig aber wirklich">
+      <option name="closed" value="true" />
+      <created>1704412540848</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1704412540848</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -124,6 +145,7 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="alles ziemlich scheiße" />
     <MESSAGE value="wooo fertig" />
-    <option name="LAST_COMMIT_MESSAGE" value="wooo fertig" />
+    <MESSAGE value="wooo fertig aber wirklich" />
+    <option name="LAST_COMMIT_MESSAGE" value="wooo fertig aber wirklich" />
   </component>
 </project>
