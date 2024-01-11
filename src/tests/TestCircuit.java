@@ -48,8 +48,8 @@ public class TestCircuit {
         SerialCircuit s2 = new SerialCircuit(r4, 500);
         ParallelCircuit p1 = new ParallelCircuit(100, 300);
         SerialCircuit s1 = new SerialCircuit(p1, 200);
-        ParallelCircuit c1 = new ParallelCircuit(s1/*3*/, s2, 600);
-        return c1;
+        ParallelCircuit c1 = new ParallelCircuit(s1, s2, 600);
+        return c1;//getcount?
     }
 
     /**
